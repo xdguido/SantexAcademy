@@ -7,14 +7,14 @@ exports.validate = function (method) {
         .exists()
         .withMessage(() => 'El campo es obligatorio.')
         .isLength({ min: 3, max: 255 })
-        .withMessage(() => 'El campo debe tener entre 1 y 255 caracteres.'),
+        .withMessage(() => 'El campo debe tener entre 3 y 255 caracteres.'),
       body('password').trim().escape()
         .exists()
         .withMessage(() => 'El campo es obligatorio.')
         .isLength({ min: 3, max: 255 })
         .withMessage(() => 'El campo debe tener entre 1 y 255 caracteres.'),
       body().custom((item) => {
-        const keys = ['username', 'recaptcha', 'password', 'cuit'];
+        const keys = ['username', 'password'];
         return Object.keys(item).every((key) => keys.includes(key));
       }).withMessage('Hay parámetros no permitidos en su consulta.'),
     ];
