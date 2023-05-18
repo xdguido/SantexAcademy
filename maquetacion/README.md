@@ -1,1 +1,2 @@
-This folder contains the code for the HTML and CSS lessons
+Maquetado simple con HTML y CSS.
+Guido Gennari.
